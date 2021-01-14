@@ -11,4 +11,12 @@ class Item
   def to_s()
     "#{@name}, #{@sell_in}, #{@quality}"
   end
+
+  def sell_in=(sell_in)
+    @sell_in = sell_in
+  end
+
+  def quality=(quality)
+    @quality = quality
+  end
 end

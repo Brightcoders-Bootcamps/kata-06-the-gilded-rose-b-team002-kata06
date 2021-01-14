@@ -1,8 +1,9 @@
 # This is utils module for diferents methods
 module Utils
   def Utils.update_quality(item)
-    item_name = item_name
+    item_name = item.name
     item.quality = 80 if item_name === "Sulfuras, Hand of Ragnaros"
+    item.sell_in = (item.sell_in - 1) if (item.sell_in > 0)
     if ["Aged Brie", "Backstage passes to a TAFKAL80ETC concert"].include? item_name
       item.quality += 1 if item.quality < 50 && item_name === "Aged Brie"
       item.quality += set_backstage_passes_quality(item.quality, item.sell_in) if (item_name === "Backstage passes to a TAFKAL80ETC concert")
